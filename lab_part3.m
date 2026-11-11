@@ -20,8 +20,10 @@ assert(max(abs(run_dac(dac,c) - ideal_dac(c,N,Vref))) < 1e-12, ...
 
 p = struct('offset_lsb', 3, 'gain_err', -0.01);
 dac = make_dac(N, Vref, p);
-v   = run_dac(dac, c);
+v   = run_dac(dac, c); % vector of every possible digital input into DAC, v = analog output
 s   = static_dac(v, N, Vref);
+fprintf('Nonideal: maxDNL=%.2e  maxINL=%.2e  offset=%.2e LSB  gain=%.2e %%\n', ...
+    s.maxDNL, s.maxINL, s.offset_lsb, s.gain_err_pct);
 
 figure;
 subplot(2,1,1); plot(c, v, c, ideal_dac(c,N,Vref), '--'); grid on;
