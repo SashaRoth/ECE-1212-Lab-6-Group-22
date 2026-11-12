@@ -17,7 +17,7 @@ subplot(1,2,1); stairs(c3, v3, 'LineWidth',1.5); grid on;
 xlabel('Input code'); ylabel('V_{out} (V)'); title('3-bit ideal DAC');
 subplot(1,2,2); plot(c, v); grid on;
 xlabel('Input code'); ylabel('V_{out} (V)'); title('10-bit ideal DAC');
-save_lab_fig('part1_dac_tf');
+%save_lab_fig('part1_dac_tf');
 
 fprintf('Part 1 checkpoints:\n');
 fprintf('  code 0    -> %.6f V\n', v(1));

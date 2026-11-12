@@ -31,6 +31,6 @@ legend('Actual','Ideal','Location','northwest'); ylabel('V_{out} (V)');
 title(sprintf('maxINL = %.2e LSB,  maxDNL = %.2e LSB', s.maxINL, s.maxDNL));
 subplot(2,1,2); plot(c, (v - ideal_dac(c,N,Vref))/LSB); grid on;
 xlabel('Code'); ylabel('Error vs ideal (LSB)'); title('Total (absolute) error');
-save_lab_fig('part3_offset_gain');
+%save_lab_fig('part3_offset_gain');
 fprintf('offset = %.2f LSB, gain error = %.3f %%, maxINL = %.2e, maxDNL = %.2e\n', ...
         s.offset_lsb, s.gain_err_pct, s.maxINL, s.maxDNL);
